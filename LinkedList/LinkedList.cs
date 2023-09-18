@@ -27,5 +27,15 @@ namespace LinkedList
 
             }
         }
+
+        public void Loop(Action<object> action)
+        {
+            Node cur = head;
+            while (cur != null)
+            {
+                action(cur.Data);
+                cur = cur.Next;
+            }
+        }
     }
 }
