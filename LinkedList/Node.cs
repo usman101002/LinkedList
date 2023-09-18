@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    internal class Node
+    internal class Node<T>
     {
-        public object Data { get; }
-        public Node Next { get; set; }
+        public T Data { get; }
+        public Node<T> Next { get; set; }
 
-        public Node(object data)
+        public Node(T data)
         {
             this.Data = data;
             this.Next = null;

@@ -7,30 +7,27 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    internal class LinkedList
+    internal class LinkedList<T>
     {
-        private Node head { get; set; }
-        public void Add(object data)
+        public LinkedList(T data)
         {
-            if (head == null)
-            {
-                head = new Node(data);
-            }
-            else
-            {
-                Node cur = head;
-                while (cur.Next != null)
-                {
-                    cur = cur.Next;
-                }
-                cur.Next = new Node(data);
-
-            }
+            this.head = new Node<T>(data);
         }
 
-        public void Loop(Action<object> action)
+        private Node<T> head { get; set; }
+        public void Add(T data)
         {
-            Node cur = head;
+            Node<T> cur = head;
+            while (cur.Next != null)
+            {
+                cur = cur.Next;
+            }
+            cur.Next = new Node<T>(data);
+        }
+
+        public void Loop(Action<T> action)
+        {
+            Node<T> cur = head;
             while (cur != null)
             {
                 action(cur.Data);
