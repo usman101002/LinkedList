@@ -16,12 +16,12 @@ namespace LinkedList
             list.Add(3);
             list.Add(4);
 
-            list.Loop(x => Console.WriteLine(x));
-            Console.WriteLine("----");
-
-            LinkedList<string> list2 = new LinkedList<string>("Usman");
-            list2.Add("Kuramshin");
-            list2.Loop(x => Console.WriteLine(x)); 
+            foreach (var node in list)
+            {
+                Console.WriteLine(node);
+            }
+            
+            
         }
     }
 }
